@@ -12,22 +12,66 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/apple_logo.png
+  AssetGenImage get appleLogo =>
+      const AssetGenImage('assets/images/apple_logo.png');
+
   /// File path: assets/images/cmr_flag.jpg
   AssetGenImage get cmrFlag =>
       const AssetGenImage('assets/images/cmr_flag.jpg');
+
+  /// File path: assets/images/google_logo.png
+  AssetGenImage get googleLogo =>
+      const AssetGenImage('assets/images/google_logo.png');
+
+  /// File path: assets/images/iyo_blue_logo.png
+  AssetGenImage get iyoBlueLogo =>
+      const AssetGenImage('assets/images/iyo_blue_logo.png');
+
+  /// File path: assets/images/iyo_white_logo.png
+  AssetGenImage get iyoWhiteLogo =>
+      const AssetGenImage('assets/images/iyo_white_logo.png');
+
+  /// File path: assets/images/location_setup.png
+  AssetGenImage get locationSetup =>
+      const AssetGenImage('assets/images/location_setup.png');
 
   /// File path: assets/images/signup_banner.png
   AssetGenImage get signupBanner =>
       const AssetGenImage('assets/images/signup_banner.png');
 
+  /// File path: assets/images/welcome_bg.jpg
+  AssetGenImage get welcomeBg =>
+      const AssetGenImage('assets/images/welcome_bg.jpg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [cmrFlag, signupBanner];
+  List<AssetGenImage> get values => [
+        appleLogo,
+        cmrFlag,
+        googleLogo,
+        iyoBlueLogo,
+        iyoWhiteLogo,
+        locationSetup,
+        signupBanner,
+        welcomeBg
+      ];
+}
+
+class $AssetsSvgsGen {
+  const $AssetsSvgsGen();
+
+  /// File path: assets/svgs/iyo_logo.svg
+  String get iyoLogo => 'assets/svgs/iyo_logo.svg';
+
+  /// List of all assets
+  List<String> get values => [iyoLogo];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }
 
 class AssetGenImage {

@@ -222,6 +222,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_form_builder:
+    dependency: "direct main"
+    description:
+      name: flutter_form_builder
+      sha256: "447f8808f68070f7df968e8063aada3c9d2e90e789b5b70f3b44e4b315212656"
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.3.0"
   flutter_gen:
     dependency: "direct main"
     description:
@@ -254,6 +262,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -267,6 +280,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  form_builder_validators:
+    dependency: "direct main"
+    description:
+      name: form_builder_validators
+      sha256: c61ed7b1deecf0e1ebe49e2fa79e3283937c5a21c7e48e3ed9856a4a14e1191a
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -275,6 +296,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  gap_here:
+    dependency: "direct main"
+    description:
+      name: gap_here
+      sha256: f4d37b13c1c4dfe98dd8809c401ab1594acc45a4fa65117a6e0e0087d4a91ed5
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   glob:
     dependency: transitive
     description:
@@ -339,6 +368,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.19.0"
   io:
     dependency: transitive
     description:
@@ -515,6 +552,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  pinput:
+    dependency: "direct main"
+    description:
+      name: pinput
+      sha256: "7bf9aa7d0eeb3da9f7d49d2087c7bc7d36cd277d2e94cc31c6da52e1ebb048d0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
   platform:
     dependency: transitive
     description:
@@ -656,6 +701,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+  universal_platform:
+    dependency: transitive
+    description:
+      name: universal_platform
+      sha256: "64e16458a0ea9b99260ceb5467a214c1f298d647c659af1bff6d3bf82536b1ec"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   vector_graphics:
     dependency: "direct main"
     description:

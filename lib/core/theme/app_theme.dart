@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
+import 'package:iyo_grocery_app/core/theme/customs/appbar_theme.dart';
 
-import 'customs/button_theme.dart';
-import 'customs/text_theme.dart';
+import 'customs/app_button_theme.dart';
+import 'customs/app_text_theme.dart';
+import 'customs/app_textfield_theme.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    
     canvasColor: Colors.transparent,
     highlightColor: Colors.transparent,
     splashColor: Colors.transparent,
@@ -15,11 +18,11 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     textTheme: AppTextTheme.lightTextTheme,
     elevatedButtonTheme: AppButtonTheme.elevatedButtonTheme,
-    // appBarTheme: CustomAppBarTheme.lightAppBarTheme,
+    appBarTheme: AppbarTheme.lightAppBarTheme,
     // bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
     // chipTheme: AppChipTheme.lightChipTheme,
-    // outlinedButtonTheme: AppOutlinedButton.lightOutlinedButtonTheme,
-    // inputDecorationTheme: AppTextFormFieldTheme.lightInputDecorationTheme,
+    outlinedButtonTheme: AppButtonTheme.outlinedButtonTheme,
+    inputDecorationTheme: AppTextFieldTheme.inputDecorationTheme,
     // checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
     // textButtonTheme: AppTextButtonTheme.lightTextButtonTheme,
   );
