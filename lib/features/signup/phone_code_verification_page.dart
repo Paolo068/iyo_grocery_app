@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap_here/gap_here.dart';
-import 'package:iyo_grocery_app/core/app_layout.dart';
+import 'package:iyo_grocery_app/core/layouts/app_layout.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../core/pallete.dart';
@@ -29,35 +29,31 @@ class _PhoneCodeVerificationPageState extends State<PhoneCodeVerificationPage> {
     return Scaffold(
       appBar: AppBar(),
       body: AppLayout(
-        child: Stack(children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Enter your 4-digit code',
-                style: textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.normal,
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Enter your 4-digit code',
+              style: textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.normal,
               ),
-              const GapHere(4),
-              Pinput(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                defaultPinTheme: defaultPinTheme,
-                focusedPinTheme: defaultPinTheme.copyDecorationWith(
-                  border: Border.all(color: Pallete.primary),
-                ),
-                validator: (s) {
-                  return s == '2222' ? null : 'Pin is incorrect';
-                },
-                pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                showCursor: true,
-                onCompleted: (pin) {},
+            ),
+            const GapHere(4),
+            Pinput(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              defaultPinTheme: defaultPinTheme,
+              focusedPinTheme: defaultPinTheme.copyDecorationWith(
+                border: Border.all(color: Pallete.primary),
               ),
-            ],
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Row(
+              validator: (s) {
+                return s == '2222' ? null : 'Pin is incorrect';
+              },
+              pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+              showCursor: true,
+              onCompleted: (pin) {},
+            ),
+            const Spacer(),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
@@ -69,16 +65,16 @@ class _PhoneCodeVerificationPageState extends State<PhoneCodeVerificationPage> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(60, 60),
+                    minimumSize: const Size(50, 50),
                     shape: const CircleBorder(),
                   ),
                   onPressed: () {},
-                  child: const Icon(Icons.arrow_forward_ios_rounded),
+                  child: const Icon(Icons.chevron_right_rounded),
                 ),
               ],
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iyo_grocery_app/core/utils.dart';
+import 'package:iyo_grocery_app/core/app_sizes.dart';
 
 class AppLayout extends StatelessWidget {
   final Widget child;
@@ -10,13 +10,9 @@ class AppLayout extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
-        child: SingleChildScrollView(
-          reverse: true,
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, Utils.getKbdHeight(context) + 10),
-            child: child,
-          ),
+        child: Padding(
+          padding: defaultAppPadding,
+          child: child,
         ),
       ),
     );

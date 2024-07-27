@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:gap_here/gap_here.dart';
-import 'package:iyo_grocery_app/core/app_layout.dart';
+import 'package:iyo_grocery_app/core/layouts/app_layout.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
 
