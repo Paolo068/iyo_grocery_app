@@ -3,6 +3,7 @@ import 'package:gap_here/gap_here.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
 import 'package:iyo_grocery_app/core/utils.dart';
+import 'package:iyo_grocery_app/features/login/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -47,7 +48,9 @@ class WelcomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                  },
                   child: const Text('Get Started'),
                 ),
               )

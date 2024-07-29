@@ -13,4 +13,5 @@ class Pallete {
   static const inputBorder = Color(0xFFD3D3D3);
   static const btnBorder = Color(0xFF9B9B9B);
   static const inputFilled = Color(0xFFF8F8F8);
+  static const boxBorderColor = Color(0xFFE2E2E2);
 }

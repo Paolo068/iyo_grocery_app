@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iyo_grocery_app/core/theme/app_theme.dart';
-import 'package:iyo_grocery_app/features/login/login_page.dart';
+
+import 'features/welcome/welcome_page.dart';
 
 class IyoApp extends StatelessWidget {
   const IyoApp({super.key});
@@ -12,7 +13,7 @@ class IyoApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const Scaffold(
         resizeToAvoidBottomInset: false,
-        body: LoginPage(),
+        body: WelcomePage(),
       ),
     );
   }

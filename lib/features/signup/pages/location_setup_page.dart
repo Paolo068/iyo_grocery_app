@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:gap_here/gap_here.dart';
-import 'package:iyo_grocery_app/core/layouts/app_layout.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
+import 'package:iyo_grocery_app/core/layouts/form_layout.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
+import 'package:iyo_grocery_app/features/signup/pages/profile_type_setup_page.dart';
 
-import '../../core/shared/label_text.dart';
+import '../../../core/shared/label_text.dart';
 
 class LocationSetupPage extends StatelessWidget {
   const LocationSetupPage({super.key});
@@ -15,7 +16,7 @@ class LocationSetupPage extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-      body: AppLayout(
+      body: FormLayout(
         child: Column(
           children: [
             Assets.images.locationSetup.image(),
@@ -62,13 +63,14 @@ class LocationSetupPage extends StatelessWidget {
                   ),
                   const GapHere(4),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileTypeSetupPage()));
+                    },
                     child: const Text('Submit'),
                   )
                 ],
               ),
             )
-          
           ],
         ),
       ),

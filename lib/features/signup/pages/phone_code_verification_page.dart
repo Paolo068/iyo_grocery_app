@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap_here/gap_here.dart';
+import 'package:iyo_grocery_app/core/assets.gen.dart';
 import 'package:iyo_grocery_app/core/layouts/app_layout.dart';
+import 'package:iyo_grocery_app/features/signup/pages/location_setup_page.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../core/pallete.dart';
+import '../../../core/pallete.dart';
 
 class PhoneCodeVerificationPage extends StatefulWidget {
   const PhoneCodeVerificationPage({super.key});
@@ -27,18 +29,26 @@ class _PhoneCodeVerificationPageState extends State<PhoneCodeVerificationPage> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: AppBar(),
       body: AppLayout(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const GapHere(2),
+
+            Center(child: Assets.images.iyoBlueLogo.image()),
+            const GapHere(6),
             Text(
               'Enter your 4-digit code',
               style: textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.normal,
               ),
+              
             ),
-            const GapHere(4),
+            const Text(
+                'Please enter your the digits code you received by SMS to verify your phone number',
+                style: TextStyle(color: Pallete.labelText),
+              ),
+            const GapHere(3),
             Pinput(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               defaultPinTheme: defaultPinTheme,
@@ -57,7 +67,9 @@ class _PhoneCodeVerificationPageState extends State<PhoneCodeVerificationPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneCodeVerificationPage()));
+                  },
                   child: Text(
                     'Resend Code',
                     style: textTheme.titleMedium?.copyWith(color: Pallete.primary),
@@ -68,7 +80,9 @@ class _PhoneCodeVerificationPageState extends State<PhoneCodeVerificationPage> {
                     minimumSize: const Size(50, 50),
                     shape: const CircleBorder(),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LocationSetupPage()));
+                  },
                   child: const Icon(Icons.chevron_right_rounded),
                 ),
               ],

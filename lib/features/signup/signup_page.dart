@@ -1,10 +1,14 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:gap_here/gap_here.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
+import 'package:iyo_grocery_app/core/layouts/form_layout.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
-import 'package:iyo_grocery_app/core/utils.dart';
+
+import '../../core/shared/label_text.dart';
+import '../login/login_page.dart';
+import 'pages/phone_code_verification_page.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -12,144 +16,105 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              // Grocery image
-              SizedBox.fromSize(
-                size: Size.fromHeight(Utils.screen(context).height * 0.4),
-                child: Image.asset(
-                  Assets.images.signupBanner.path,
-                ),
+    return Scaffold(
+      body: FormLayout(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // const GapHere(2),
+            Center(child: Assets.images.iyoBlueLogo.image()),
+            const GapHere(6),
+            Text('Sign Up', style: textTheme.headlineSmall),
+            const Text(
+              'Enter your email and password',
+              style: TextStyle(color: Pallete.labelText),
+            ),
+            const GapHere(4),
+            FormBuilder(
+              child: Flex(
+                direction: Axis.vertical,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const LabelText('Username'),
+                      FormBuilderTextField(
+                        name: 'username',
+                        initialValue: 'Amir Toukour',
+                      ),
+                    ],
+                  ),
+                  const GapHere(2),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const LabelText('Email'),
+                      FormBuilderTextField(
+                        name: 'email',
+                        initialValue: 'imshuvo97@gmail.com',
+                      ),
+                    ],
+                  ),
+                  const GapHere(2),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const LabelText('Password'),
+                      FormBuilderTextField(
+                        name: 'password',
+                        obscureText: true,
+                        initialValue: 'Type your password here',
+                        decoration: const InputDecoration(
+                            hintText: 'Type your password', suffixIcon: Icon(Icons.visibility_off_outlined)),
+                      ),
+                    ],
+                  ),
+                  const GapHere(2),
+                  Text.rich(
+                    TextSpan(text: "By continuing you agree to our ", children: [
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        style: const TextStyle(color: Pallete.primary),
+                        text: 'Terms of service',
+                      ),
+                      const TextSpan(text: " and "),
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        style: const TextStyle(color: Pallete.primary),
+                        text: 'Privacy Policy.',
+                      ),
+                    ]),
+                  ),
+                  const GapHere(4),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneCodeVerificationPage()));
+                    },
+                    child: const Text('Submit'),
+                  ),
+                  const GapHere(2),
+                  Text.rich(
+                    TextSpan(text: "Already have an account? ", children: [
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginPage(),
+                              ),
+                            );
+                          },
+                        style: const TextStyle(color: Pallete.primary),
+                        text: 'Login',
+                      )
+                    ]),
+                  ),
+                ],
               ),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Title
-
-                    Text(
-                      'All your groceries\nwith Iyo',
-                      style: textTheme.headlineMedium?.copyWith(
-                        fontWeight: FontWeight.normal,
-                        fontFamily: GoogleFonts.ibmPlexSerif().fontFamily,
-                      ),
-                    ),
-                    const GapHere(5),
-                    FormBuilder(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Phone number'),
-                          const GapHere(1),
-                          FormBuilderTextField(
-                            decoration: InputDecoration(
-                              prefixIconConstraints: const BoxConstraints(minWidth: 30),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.only(left: 15, right: 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Assets.images.cmrFlag.image(width: 30),
-                                    const GapHere(0.1),
-                                    const Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: Colors.grey,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              hintText: 'Enter phone number',
-                            ),
-                            name: 'phone',
-                          ),
-                        ],
-                      ),
-                    ),
-                    const GapHere(4),
-
-                    // Next button
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                      ),
-                      child: const Text('Next'),
-                    ),
-                    const GapHere(2),
-
-                    // Social media options
-                    Center(
-                      child: Row(
-                        children: [
-                          const Expanded(child: Divider()),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
-                              'Or connect with social media',
-                              style: textTheme.bodyMedium?.copyWith(
-                                color: Pallete.greyText,
-                              ),
-                            ),
-                          ),
-                          const Expanded(child: Divider()),
-                        ],
-                      ),
-                    ),
-                    const GapHere(2),
-
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          // Google button
-                          Expanded(
-                            child: OutlinedButton(
-                              style: OutlinedButton.styleFrom(
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(3),
-                                  ),
-                                ),
-                              ),
-                              child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 20),
-                                  child: Assets.images.googleLogo.image(width: 25)),
-                              onPressed: () {},
-                            ),
-                          ),
-                          const GapHere(10),
-                          // Apple button
-                          Expanded(
-                            child: OutlinedButton(
-                              style: OutlinedButton.styleFrom(
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(3),
-                                  ),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 20),
-                                child: Assets.images.appleLogo.image(width: 25),
-                              ),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

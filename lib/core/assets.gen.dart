@@ -24,6 +24,9 @@ class $AssetsImagesGen {
   AssetGenImage get googleLogo =>
       const AssetGenImage('assets/images/google_logo.png');
 
+  /// Directory path: assets/images/items
+  $AssetsImagesItemsGen get items => const $AssetsImagesItemsGen();
+
   /// File path: assets/images/iyo_blue_logo.png
   AssetGenImage get iyoBlueLogo =>
       const AssetGenImage('assets/images/iyo_blue_logo.png');
@@ -36,9 +39,17 @@ class $AssetsImagesGen {
   AssetGenImage get locationSetup =>
       const AssetGenImage('assets/images/location_setup.png');
 
+  /// File path: assets/images/shop_banner.png
+  AssetGenImage get shopBanner =>
+      const AssetGenImage('assets/images/shop_banner.png');
+
   /// File path: assets/images/signup_banner.png
   AssetGenImage get signupBanner =>
       const AssetGenImage('assets/images/signup_banner.png');
+
+  /// File path: assets/images/success_mark.png
+  AssetGenImage get successMark =>
+      const AssetGenImage('assets/images/success_mark.png');
 
   /// File path: assets/images/welcome_bg.jpg
   AssetGenImage get welcomeBg =>
@@ -52,7 +63,9 @@ class $AssetsImagesGen {
         iyoBlueLogo,
         iyoWhiteLogo,
         locationSetup,
+        shopBanner,
         signupBanner,
+        successMark,
         welcomeBg
       ];
 }
@@ -60,11 +73,47 @@ class $AssetsImagesGen {
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
-  /// File path: assets/svgs/iyo_logo.svg
-  String get iyoLogo => 'assets/svgs/iyo_logo.svg';
+  /// File path: assets/svgs/cart_icon.svg
+  String get cartIcon => 'assets/svgs/cart_icon.svg';
+
+  /// File path: assets/svgs/explore_icon.svg
+  String get exploreIcon => 'assets/svgs/explore_icon.svg';
+
+  /// File path: assets/svgs/favorite_icon.svg
+  String get favoriteIcon => 'assets/svgs/favorite_icon.svg';
+
+  /// File path: assets/svgs/shop_icon.svg
+  String get shopIcon => 'assets/svgs/shop_icon.svg';
+
+  /// File path: assets/svgs/user_icon.svg
+  String get userIcon => 'assets/svgs/user_icon.svg';
 
   /// List of all assets
-  List<String> get values => [iyoLogo];
+  List<String> get values =>
+      [cartIcon, exploreIcon, favoriteIcon, shopIcon, userIcon];
+}
+
+class $AssetsImagesItemsGen {
+  const $AssetsImagesItemsGen();
+
+  /// File path: assets/images/items/apple.png
+  AssetGenImage get apple =>
+      const AssetGenImage('assets/images/items/apple.png');
+
+  /// File path: assets/images/items/banana.png
+  AssetGenImage get banana =>
+      const AssetGenImage('assets/images/items/banana.png');
+
+  /// File path: assets/images/items/ginger.png
+  AssetGenImage get ginger =>
+      const AssetGenImage('assets/images/items/ginger.png');
+
+  /// File path: assets/images/items/pepper.png
+  AssetGenImage get pepper =>
+      const AssetGenImage('assets/images/items/pepper.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [apple, banana, ginger, pepper];
 }
 
 class Assets {

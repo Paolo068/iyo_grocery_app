@@ -5,6 +5,9 @@ import 'package:gap_here/gap_here.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
 import 'package:iyo_grocery_app/core/layouts/form_layout.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
+import 'package:iyo_grocery_app/features/home/home_page.dart';
+import 'package:iyo_grocery_app/features/login/pages/forgot_password_page.dart';
+import 'package:iyo_grocery_app/features/signup/signup_page.dart';
 
 import '../../core/shared/label_text.dart';
 
@@ -60,20 +63,32 @@ class LoginPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPasswordPage()));
+                      },
                       child: const Text('Forgot Password?'),
                     ),
                   ),
                   const GapHere(4),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                    },
                     child: const Text('Submit'),
                   ),
                   const GapHere(2),
                   Text.rich(
                     TextSpan(text: "Don't have an account? ", children: [
                       TextSpan(
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignupPage(),
+                              ),
+                            );
+                          },
                         style: const TextStyle(color: Pallete.primary),
                         text: 'Sign Up',
                       )
