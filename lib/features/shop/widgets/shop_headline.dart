@@ -15,19 +15,28 @@ class ShopHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          title,
-          style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+    return SliverList(
+        delegate: SliverChildListDelegate(
+      [
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(color: subtitleColor, fontWeight: FontWeight.w500),
+            ),
+          ],
         ),
-        Text(
-          subtitle,
-          style: TextStyle(color: subtitleColor, fontWeight: FontWeight.bold),
-        ),
+        const SizedBox(
+          height: 20,
+        )
       ],
-    );
+    ));
   }
 }

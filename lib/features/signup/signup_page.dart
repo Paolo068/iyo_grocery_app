@@ -5,10 +5,10 @@ import 'package:gap_here/gap_here.dart';
 import 'package:iyo_grocery_app/core/assets.gen.dart';
 import 'package:iyo_grocery_app/core/layouts/form_layout.dart';
 import 'package:iyo_grocery_app/core/pallete.dart';
+import 'package:iyo_grocery_app/features/signup/pages/phone_setup_page.dart';
 
 import '../../core/shared/label_text.dart';
 import '../login/login_page.dart';
-import 'pages/phone_code_verification_page.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -89,7 +89,7 @@ class SignupPage extends StatelessWidget {
                   const GapHere(4),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneCodeVerificationPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneSetupPage()));
                     },
                     child: const Text('Submit'),
                   ),

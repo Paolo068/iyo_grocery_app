@@ -77,7 +77,10 @@ class PhoneSetupPage extends StatelessWidget {
 
                     // Next button
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => const PhoneCodeVerificationPage()));
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 15),
                       ),
@@ -141,9 +144,7 @@ class PhoneSetupPage extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(vertical: 20),
                                 child: Assets.images.appleLogo.image(width: 25),
                               ),
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneCodeVerificationPage()));
-                              },
+                              onPressed: () {},
                             ),
                           ),
                         ],

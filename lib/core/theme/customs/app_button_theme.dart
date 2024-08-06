@@ -15,7 +15,9 @@ class AppButtonTheme {
     // disabledBackgroundColor: Pallete.accentColor,
     // disabledForegroundColor: Colors.white,
     minimumSize: const Size.fromHeight(btnHeight),
-    textStyle: const TextStyle(fontSize: fontSize),
+    textStyle: const TextStyle(
+      fontSize: fontSize,
+    ),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
   ));
 
@@ -29,7 +31,7 @@ class AppButtonTheme {
     disabledBackgroundColor: Colors.white,
     // disabledForegroundColor: Pallete.accentColor,
     minimumSize: const Size.fromHeight(btnHeight),
-    textStyle: const TextStyle(fontSize: fontSize),
+    textStyle: const TextStyle(fontSize: fontSize, fontWeight: FontWeight.w500),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
   ));
 }

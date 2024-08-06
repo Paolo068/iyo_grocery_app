@@ -8,7 +8,6 @@ import 'customs/app_textfield_theme.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    
     canvasColor: Colors.transparent,
     highlightColor: Colors.transparent,
     splashColor: Colors.transparent,

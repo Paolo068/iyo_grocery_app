@@ -31,15 +31,23 @@ class WelcomePage extends StatelessWidget {
               Assets.images.iyoWhiteLogo.image(),
               const GapHere(3),
               Text(
-                'Iyo',
-                style: textTheme.displayLarge,
+                'Iyo Groceries',
+                style: textTheme.displayMedium?.copyWith(
+                  color: Colors.white,
+                  fontFamily: GoogleFonts.ibmPlexSerif().fontFamily,
+                ),
               ),
-              const GapHere(4),
+              const GapHere(2),
               Text(
                 'Welcome\nto our store',
                 textAlign: TextAlign.center,
-                style: textTheme.displayLarge?.copyWith(fontSize: 45),
+                style: textTheme.displayLarge?.copyWith(
+                  fontFamily: GoogleFonts.ibmPlexSerif().fontFamily,
+                  color: Colors.white,
+                  fontSize: 35,
+                ),
               ),
+              const GapHere(2),
               Text(
                 'Order your groceries in as fast as one hour',
                 style: TextStyle(color: Colors.white, fontFamily: GoogleFonts.ibmPlexSerif().fontFamily),
