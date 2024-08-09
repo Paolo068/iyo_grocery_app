@@ -26,6 +26,7 @@ class FavoritePage extends StatelessWidget {
       appBar: AppBar(),
       body: AppLayout(
           child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return const FavoriteItem();
         },

@@ -91,6 +91,7 @@ class CartPage extends StatelessWidget {
       ),
       body: AppLayout(
           child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return const CartItem();
         },
