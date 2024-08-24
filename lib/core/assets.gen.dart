@@ -115,6 +115,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/favorite_icon.svg
   String get favoriteIcon => 'assets/svgs/favorite_icon.svg';
 
+  /// File path: assets/svgs/filter_icon.svg
+  String get filterIcon => 'assets/svgs/filter_icon.svg';
+
   /// File path: assets/svgs/help_icon.svg
   String get helpIcon => 'assets/svgs/help_icon.svg';
 
@@ -159,6 +162,7 @@ class $AssetsSvgsGen {
         cartIcon,
         exploreIcon,
         favoriteIcon,
+        filterIcon,
         helpIcon,
         historyIcon,
         idCardIcon,
