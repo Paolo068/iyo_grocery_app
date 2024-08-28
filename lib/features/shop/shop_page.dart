@@ -6,6 +6,7 @@ import 'package:iyo_grocery_app/core/shared/search_field.dart';
 import 'package:iyo_grocery_app/core/utils.dart';
 import 'package:iyo_grocery_app/features/shop/widgets/shop_item.dart';
 
+import '../item/shop_item_detail_page.dart';
 import 'widgets/shop_headline.dart';
 
 class ShopPage extends StatelessWidget {
@@ -87,10 +88,15 @@ class ItemListGridview extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           final item = itemList[index];
-          return ShopItem(
-            image: item['image']!,
-            name: item['name']!,
-            price: item['price']!,
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ShopItemDetailPage()));
+            },
+            child: ShopItem(
+              image: item['image']!,
+              name: item['name']!,
+              price: item['price']!,
+            ),
           );
         });
   }
